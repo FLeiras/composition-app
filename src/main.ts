@@ -3,6 +3,9 @@ import { createApp } from "vue";
 import router from "./router";
 import { VueQueryPlugin } from "@tanstack/vue-query";
 import "./assets/main.css";
+import store from "./store/pokemon.store";
+
+store.startLoadingPokemons();
 
 const app = createApp(App);
 
