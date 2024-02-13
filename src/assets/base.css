@@ -26,6 +26,9 @@
   --color-background: var(--vt-c-white);
   --color-background-soft: var(--vt-c-white-soft);
   --color-background-mute: var(--vt-c-white-mute);
+  --color-background-dark: var(--vt-c-black);
+  --color-background-soft-dark: var(--vt-c-black-soft);
+  --color-background-mute-dark: var(--vt-c-black-mute);
 
   --color-border: var(--vt-c-divider-light-2);
   --color-border-hover: var(--vt-c-divider-light-1);
@@ -61,7 +64,7 @@
 body {
   min-height: 100vh;
   color: var(--color-text);
-  background: var(--color-background);
+  background: var(--color-background-dark);
   transition:
     color 0.5s,
     background-color 0.5s;

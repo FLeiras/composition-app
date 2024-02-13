@@ -9,9 +9,7 @@ import { sleep } from "@/pokemons/helpers/sleep";
 
 export const getPokemons = async (): Promise<Pokemon[]> => {
 
-  await sleep(1);
-
-  // throw new Error('Error de prueba');
+  await sleep(4);
 
   const { data } =
     await pokemonApi.get<PokemonListResponse>("/pokemon?limit=45");
