@@ -1,4 +1,4 @@
-import { computed, onMounted, ref } from "vue";
+import { computed, onMounted, ref, watchEffect } from "vue";
 import { useQuery } from "@tanstack/vue-query";
 import { getPokemons } from "@/pokemons/helpers/get-pokemons";
 
@@ -11,7 +11,12 @@ export const usePokemons = () => {
   } = useQuery({
     queryKey: ["pokemons"],
     queryFn: getPokemons,
+    retry: 0,
   });
+
+  watchEffect(()=>{
+    // console.log('isLoading', isLoading.value);
+  })
 
   return {
     pokemons,
