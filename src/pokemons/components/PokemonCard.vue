@@ -1,14 +1,22 @@
 <script setup lang="ts">
+import router from "@/router";
 import type { Pokemon } from "../interfaces";
 
 interface Props {
   pokemons: Pokemon;
 }
 
-defineProps<Props>();
+const props = defineProps<Props>();
+
+const goTo = () => {
+  router.push({
+    name: 'pokemon-id',
+    params: { id: props.pokemons.id }
+  });
+};
 </script>
 <template>
-  <div class="pokemon-card">
+  <div class="pokemon-card" @click="goTo">
     <img :src="pokemons.frontSprite" :alt="pokemons.name" />
     <h3>{{ pokemons.name }}</h3>
   </div>
